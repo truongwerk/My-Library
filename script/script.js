@@ -26,6 +26,7 @@ window.addEventListener("click", function (e) {
 
 //Add new book.
 const newBookForm = document.querySelector("#newBookForm");
+newBookForm.addEventListener("submit", submitNewBook);
 function submitNewBook() {
 	const title = document.getElementById("inputTitle").value;
 	const author = document.getElementById("inputAuthor").value;
@@ -124,7 +125,7 @@ function changeStatus() {
 //Remove button
 function removeButton() {
 	myLibrary.splice(this.dataset.bookIndex, 1);
-	if(myLibrary.length==0){
+	if (myLibrary.length == 0) {
 		localStorage.clear();
 	}
 	displayBooks();
