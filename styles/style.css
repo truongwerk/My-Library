@@ -140,6 +140,7 @@ table {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
+	overflow-wrap: anywhere;
 	border: 2px black solid;
 	width: 330px;
 	margin-bottom: 5%;
