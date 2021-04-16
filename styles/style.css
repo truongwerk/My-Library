@@ -1,0 +1,192 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol,
+ul {
+	list-style: none;
+}
+blockquote,
+q {
+	quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*Above is css reset*/
+
+#container {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.book {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+	border: 2px black solid;
+	width: 330px;
+	margin-bottom: 5%;
+}
+#formDiv {
+	display: none;
+	position: fixed;
+    z-index: 1;
+	flex-flow: column nowrap;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	transition: all 0.5s;
+}
+#newBookForm {
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 1%;
+	border: yellow 2px solid;
+	border-radius: 10%;
+	background-color: rgb(95, 199, 188);
+	text-align: center;
+}
+#newBookForm h1 {
+	margin: 7%;
+	font-size: xx-large;
+	font-weight:bolder;
+}
+#newBookForm input {
+    margin: 5%;
+    font-size:x-large ;
+    padding: 2px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+#inputStatus{
+    margin: 5%;
+    font-size: x-large;
+    text-align: center;
+    border-radius: 10px;
+}
+#input{
+    font-weight: bolder;
+    margin: 5%;
+    font-size: x-large;
+    border-radius: 50px;
+}

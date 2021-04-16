@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="styles/style.css" />
+	</head>
+	<body>
+		<div id="formDiv">
+			<form action="#" id="newBookForm">
+				<h1>Add New book</h1>
+				<input type="text" id="inputTitle" placeholder="Title" required />
+				<input type="text" id="inputAuthor" placeholder="Author" required />
+				<input type="number" id="inputPages" placeholder="Pages" min="1" required/>
+				<select id="inputStatus">
+					<option value="Not Read">Not touch it</option>
+					<option value=",Reading">Still reading</option>
+					<option value="Read">Finished it</option>
+				</select>
+				<button id="input">New Book</button>
+			</form>
+		</div>
+		<h1 id="pageTitle">My Library</h1>
+		<button id="newBook">New Book</button>
+		<div id="container"></div>
+		<script src="script/script.js"></script>
+	</body>
+</html>
