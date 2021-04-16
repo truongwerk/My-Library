@@ -27,6 +27,23 @@ window.addEventListener("click", function (e) {
 
 //Add new book.
 const newBookForm = document.querySelector("#newBookForm");
+function submitNewBook() {
+	const title = document.getElementById("inputTitle").value;
+	const author = document.getElementById("inputAuthor").value;
+	const pages = document.getElementById("inputPages").value;
+	const status = document.getElementById("inputStatus").value;
+	const newBook = new books(title, author, pages, status);
+	myLibrary.push(newBook);
+	document.getElementById("inputTitle").value = null;
+	document.getElementById("inputAuthor").value = null;
+	document.getElementById("inputPages").value = null;
+	document.getElementById("inputStatus").value = "Not Read";
+	formDiv.style.display = "none";
+	displayBooks();
+	console.table(myLibrary);
+}
+
+/** 
 newBookForm.addEventListener("submit", function () {
 	const title = document.getElementById("inputTitle").value;
 	const author = document.getElementById("inputAuthor").value;
@@ -42,6 +59,7 @@ newBookForm.addEventListener("submit", function () {
 	displayBooks();
 	console.table(myLibrary);
 });
+*/
 
 //Clear old display.
 const container = document.querySelector("#container");
