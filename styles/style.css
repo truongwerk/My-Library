@@ -128,11 +128,35 @@ table {
 	border-spacing: 0;
 }
 /*Above is css reset*/
-
+body {
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+}
+#pageTitle {
+	width: 100%;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+	text-align: center;
+	font-size: xx-large;
+	font-weight: bolder;
+	font-family: "Courier New", Courier, monospace;
+	background-color: aqua;
+	border-bottom: rgb(209, 212, 19) 4px solid;
+}
+#newBook {
+	padding: 1rem;
+	margin: 1.5rem;
+	font-size: x-large;
+	font-weight: bold;
+	color: black;
+	border: 2px black solid;
+	border-radius: 10%;
+}
 #container {
+	width: 100%;
 	display: flex;
 	flex-flow: row wrap;
-	align-items: center;
 	justify-content: space-evenly;
 }
 .book {
@@ -140,15 +164,107 @@ table {
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: center;
-	overflow-wrap: anywhere;
-	border: 2px black solid;
+	overflow-wrap: break-word;
+	overflow: auto;
+	border: 3px black solid;
+	background: linear-gradient(#92ffff, #cbcef1);
+	border-radius: 15px;
 	width: 330px;
-	margin-bottom: 5%;
+	margin-bottom: 2rem;
+}
+.title {
+	text-align: center;
+	font-size: x-large;
+	font-weight: bolder;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	color: darkred;
+}
+.author {
+	text-align: center;
+	font-size: large;
+	font-weight: bold;
+	color: darkred;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.pages {
+	font-size: large;
+	color: darkred;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+.statusNotRead {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 8rem;
+	border: 2px black solid;
+	border-radius: 10px;
+	color: white;
+	background-color: red;
+	font-size: large;
+	font-weight: bold;
+}
+.statusReading {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 8rem;
+	border: 2px black solid;
+	border-radius: 10px;
+	color: white;
+	background-color: darkorange;
+	font-size: large;
+	font-weight: bold;
+}
+.statusRead {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 8rem;
+	border: 2px black solid;
+	border-radius: 10px;
+	color: white;
+	background-color: darkgreen;
+	font-size: large;
+	font-weight: bold;
+}
+.removeButton {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+	width: 8rem;
+	border: 2px black solid;
+	border-radius: 10px;
+	color: white;
+	background-color: darkmagenta;
+	font-size: large;
+	font-weight: bold;
+}
+.statusNotRead:hover,
+.statusReading:hover,
+.statusRead:hover,
+.removeButton:hover,
+#newBook:hover {
+	box-shadow: inset 100px 100px rgb(0, 0, 0, 0.4);
+	color: white;
+}
+.removeButton:active,
+.statusNotRead:active,
+.statusReading:active,
+.statusRead:active,
+#newBook:active {	
+	box-shadow: inset 100px 100px rgba(255, 238, 0, 0.6);
 }
 #formDiv {
 	display: none;
 	position: fixed;
-    z-index: 1;
+	z-index: 1;
 	flex-flow: column nowrap;
 	width: 100%;
 	height: 100%;
@@ -170,24 +286,24 @@ table {
 #newBookForm h1 {
 	margin: 7%;
 	font-size: xx-large;
-	font-weight:bolder;
+	font-weight: bolder;
 }
 #newBookForm input {
-    margin: 5%;
-    font-size:x-large ;
-    padding: 2px;
-    font-weight: bold;
-    border-radius: 10px;
+	margin: 5%;
+	font-size: x-large;
+	padding: 2px;
+	font-weight: bold;
+	border-radius: 10px;
 }
-#inputStatus{
-    margin: 5%;
-    font-size: x-large;
-    text-align: center;
-    border-radius: 10px;
+#inputStatus {
+	margin: 5%;
+	font-size: x-large;
+	text-align: center;
+	border-radius: 10px;
 }
-#input{
-    font-weight: bolder;
-    margin: 5%;
-    font-size: x-large;
-    border-radius: 50px;
+#input {
+	font-weight: bolder;
+	margin: 5%;
+	font-size: x-large;
+	border-radius: 50px;
 }

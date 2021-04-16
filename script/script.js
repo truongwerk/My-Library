@@ -1,8 +1,7 @@
 let myLibrary = [];
-if (JSON.parse(window.localStorage.getItem("library")) != null) {
+if (localStorage.length != 0) {
 	myLibrary = JSON.parse(window.localStorage.getItem("library"));
 }
-
 function books(title, author, pages, status) {
 	this.title = title;
 	this.author = author;
@@ -42,24 +41,6 @@ function submitNewBook() {
 	displayBooks();
 	console.table(myLibrary);
 }
-
-/** 
-newBookForm.addEventListener("submit", function () {
-	const title = document.getElementById("inputTitle").value;
-	const author = document.getElementById("inputAuthor").value;
-	const pages = document.getElementById("inputPages").value;
-	const status = document.getElementById("inputStatus").value;
-	const newBook = new books(title, author, pages, status);
-	myLibrary.push(newBook);
-	document.getElementById("inputTitle").value = null;
-	document.getElementById("inputAuthor").value = null;
-	document.getElementById("inputPages").value = null;
-	document.getElementById("inputStatus").value = "Not Read";
-	formDiv.style.display = "none";
-	displayBooks();
-	console.table(myLibrary);
-});
-*/
 
 //Clear old display.
 const container = document.querySelector("#container");
@@ -107,7 +88,7 @@ function displayBooks() {
 		remove.textContent = `Remove`;
 		book.appendChild(remove);
 
-		window.localStorage.setItem("Library", JSON.stringify(myLibrary));
+		window.localStorage.setItem("library", JSON.stringify(myLibrary));
 		console.log(localStorage);
 	}
 }
@@ -143,9 +124,10 @@ function changeStatus() {
 //Remove button
 function removeButton() {
 	myLibrary.splice(this.dataset.bookIndex, 1);
+	if(myLibrary.length==0){
+		localStorage.clear();
+	}
 	displayBooks();
 }
 
-//let web = new books("Web dev 101", "The Odin Project", 100, "Reading");
-//myLibrary.push(web);
-//displayBooks();
+displayBooks();
