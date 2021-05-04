@@ -2,13 +2,16 @@ let myLibrary = [];
 if (localStorage.length != 0) {
 	myLibrary = JSON.parse(window.localStorage.getItem("library"));
 }
-function Books(title, author, pages, status) {
-	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.status = status;
-	};
 
+const myBooks = class {
+	constructor(title, author, pages, status) {
+		this.title = title;
+		this.author = author;
+		this.pages = pages;
+		this.status = status;
+		this.readPages = 0;
+	}
+};
 
 //Show  and hide form
 const formDiv = document.querySelector("#formDiv");
@@ -30,7 +33,7 @@ function submitNewBook() {
 	const author = document.getElementById("inputAuthor").value;
 	const pages = document.getElementById("inputPages").value;
 	const status = document.getElementById("inputStatus").value;
-	const newBook = new Books(title, author, pages, status);
+	const newBook = new myBooks(title, author, pages, status);
 	myLibrary.push(newBook);
 	document.getElementById("inputTitle").value = null;
 	document.getElementById("inputAuthor").value = null;
@@ -88,7 +91,6 @@ function displayBooks() {
 		book.appendChild(remove);
 
 		window.localStorage.setItem("library", JSON.stringify(myLibrary));
-		console.log(localStorage);
 	}
 }
 
